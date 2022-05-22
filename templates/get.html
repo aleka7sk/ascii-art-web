@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, inital-scale=1.0">
+		<link href="/static/style.css" rel="stylesheet">
+	</head>
+	<style>
+		  html {
+			background-image: url(static/images/back2.jpeg);
+            background-color: rgba(0,0,0,0.7);
+            background-blend-mode:darken;
+            background-size: cover;	
+		}
+	</style>
+	<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+			</div>
+		</header>
+		<main class="main">
+			<div class="container">
+				<div class="main__row">
+					<img src="static/images/xasan.jpg" alt="">
+					<div class="main__content">
+						<h1>ASCII Art Web</h1>
+						<form action="/ascii-art" method="POST">
+						<label for="fonts">Выберите шрифт</label>
+						<select name="fonts" id="fonts">
+							<option value="standard">Standard</option>
+							<option value="shadow">Shadow</option>
+							<option value="thinkertoy">Thinkertoy</option>
+						</select>
+						<br/> 
+						<br/>
+						<textarea rows="10" cols="50" name="text"></textarea>
+						<br/>
+						<br/>
+						<button type="submit">Отправить</button>
+						<button type="button" onclick="clearOutput()">Очистить</button>
+						</form>
+						<div id="result">
+						</div>
+					</div>
+					<div class="main__outputs">
+						<h2>Standard output</h2>
+						<div class="main__output">
+							
+							
+						</div>
+						<h2>API output</h2>
+						<div class="main__output" class="result">
+							
+							
+						</div>
+					</div>
+					<img src="static/images/alish.jpg" alt="">
+				</div>
+			</div>
+		
+		</main>
+		<footer class="footer">
+			<div class="container">
+			</div>
+		</footer>
+	</div>
+	<script src="/static/main_get.js"></script>
+	</body>
+</html>

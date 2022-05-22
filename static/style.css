@@ -1,0 +1,64 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	
+}
+
+
+.container {
+	width: 2800px;
+	margin: 0 auto;
+}
+
+.main__row {
+	display: flex;
+	justify-content: space-between;
+	padding: 50px;
+}
+
+.main__content {
+	text-align: center;
+	color: white;
+}
+
+.main__output {
+	border: 1px black solid;
+	color: rgb(217, 255, 0);
+	background: linear-gradient(90deg, rgba(246, 42, 15, 0.6), rgba(36, 205, 221, 0.6));
+	padding: 20px;
+	width: 600px;
+	height: 300px;
+	overflow: scroll;
+	display: flex;
+}
+
+
+input {
+	padding: 15px;
+	background: linear-gradient(0deg, rgb(150,150,150), rgb(300,300,300));	
+	font-size: 20px;
+}
+
+label {
+	font-size: 20px;
+}
+
+select, option {
+	font-size: 20px;
+}
+
+textarea {
+	font-size: 20px;
+	background: linear-gradient(90deg, rgba(246, 42, 15, 0.6), rgba(36, 205, 221, 0.6));
+	color: white;
+}
+
+h2 {
+	color: white;
+}
+
+
