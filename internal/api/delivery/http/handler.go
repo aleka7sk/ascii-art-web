@@ -33,15 +33,16 @@ func (h *Handler) GetPage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if r.Method != "GET" {
-		w.Write([]byte("Your method will be GET"))
+		w.Write([]byte("BAD REQUEST: Your method will be GET"))
 		return
 	}
+	w.WriteHeader(http.StatusOK)
 	tmpl.Execute(w, nil)
 }
 
 func (h *Handler) PostPage(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
-		w.Write([]byte("Your method will be POST"))
+		w.Write([]byte("BAD REQUEST: Your method will be POST"))
 		return
 	}
 	tmpl, err := template.ParseFiles("./templates/post.html", "./templates/500.html")
@@ -55,15 +56,16 @@ func (h *Handler) PostPage(w http.ResponseWriter, r *http.Request) {
 	text := r.Form.Get("text")
 	ascii_art := usecase.ConvertToAscii(text, font)
 	data.Text = ascii_art
+	w.WriteHeader(http.StatusOK)
 	tmpl.ExecuteTemplate(w, "post.html", data)
 }
 
-func (h *Handler) Api(response http.ResponseWriter, request *http.Request) {
+func (h *Handler) Api(w http.ResponseWriter, r *http.Request) {
 	output := data
 	jsonResponse, jsonError := json.Marshal(output)
 	if jsonError != nil {
 		fmt.Println("Unable to encode JSON")
 	}
-	response.Header().Set("Content-Type", "application/json")
-	response.Write(jsonResponse)
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(jsonResponse)
 }

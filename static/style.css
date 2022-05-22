@@ -5,12 +5,12 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	
+	background-color: rgb(131, 125, 127);
 }
 
 
 .container {
-	width: 2800px;
+	width: 1600px;
 	margin: 0 auto;
 }
 
@@ -27,8 +27,8 @@ html, body {
 
 .main__output {
 	border: 1px black solid;
-	color: rgb(217, 255, 0);
-	background: linear-gradient(90deg, rgba(246, 42, 15, 0.6), rgba(36, 205, 221, 0.6));
+	color: black;
+	background: linear-gradient(90deg, rgba(200, 186, 184, 0.6), rgba(105, 227, 238, 0.6));
 	padding: 20px;
 	width: 600px;
 	height: 300px;

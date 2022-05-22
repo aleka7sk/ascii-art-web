@@ -4,17 +4,16 @@ import (
 	"ascii-art-web/config"
 	apihttp "ascii-art-web/internal/api/delivery/http"
 	"context"
+	"log"
 	"net/http"
 	"os"
 	"os/signal"
 	"time"
-
-	"github.com/sirupsen/logrus"
 )
 
 type App struct {
 	HttpServer *http.Server
-	Logger     *logrus.Logger
+	Logger     *log.Logger
 }
 
 func NewApp() *App {
@@ -24,7 +23,7 @@ func NewApp() *App {
 func (a *App) Run(config config.Config) error {
 	router := http.NewServeMux()
 	apihttp.RegisterHTTPEndpoints(router)
-	a.Logger = logrus.New()
+	a.Logger = log.Default()
 	a.HttpServer = &http.Server{
 		Addr:           ":" + config.Port,
 		Handler:        router,
@@ -37,7 +36,7 @@ func (a *App) Run(config config.Config) error {
 			a.Logger.Fatalf("Failed to listen and server: %+v", err)
 		}
 	}()
-	a.Logger.Infof("Start Server on port: %v", config.Port)
+	a.Logger.Printf("Start Server on port: %v", config.Port)
 
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, os.Interrupt, os.Interrupt)
