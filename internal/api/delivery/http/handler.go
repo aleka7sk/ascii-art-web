@@ -33,6 +33,7 @@ func (h *Handler) GetPage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if r.Method != "GET" {
+		w.WriteHeader(http.StatusBadRequest)
 		w.Write([]byte("BAD REQUEST: Your method will be GET"))
 		return
 	}
@@ -42,6 +43,7 @@ func (h *Handler) GetPage(w http.ResponseWriter, r *http.Request) {
 
 func (h *Handler) PostPage(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
+		w.WriteHeader(http.StatusBadRequest)
 		w.Write([]byte("BAD REQUEST: Your method will be POST"))
 		return
 	}
