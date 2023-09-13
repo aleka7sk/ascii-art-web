@@ -1,9 +1,9 @@
 package server
 
 import (
-	"ascii-art-web/config"
-	apihttp "ascii-art-web/internal/api/delivery/http"
 	"context"
+	"github.com/aleka7sk/ascii-art-web/config"
+	apihttp "github.com/aleka7sk/ascii-art-web/internal/api/delivery/http"
 	"log"
 	"net/http"
 	"os"

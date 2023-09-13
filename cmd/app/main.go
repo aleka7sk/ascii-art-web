@@ -1,8 +1,8 @@
 package main
 
 import (
-	"ascii-art-web/config"
-	"ascii-art-web/server"
+	"github.com/aleka7sk/ascii-art-web/config"
+	"github.com/aleka7sk/ascii-art-web/server"
 	"log"
 )
 

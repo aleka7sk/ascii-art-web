@@ -1,9 +1,9 @@
 package http
 
 import (
-	"ascii-art-web/internal/api/usecase"
 	"encoding/json"
 	"fmt"
+	"github.com/aleka7sk/ascii-art-web/internal/api/usecase"
 	"html/template"
 	"net/http"
 )
